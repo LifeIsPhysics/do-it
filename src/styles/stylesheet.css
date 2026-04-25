@@ -1,0 +1,116 @@
+:root {
+  /* Background Colors */
+  --bg-primary: #FFFFFF;
+  --bg-sidebar: #FAFAFA;
+  --bg-hover: #EEEEEE;
+  --bg-action-highlight: #FFEDE5;
+
+  /* Text Colors */
+  --text-primary: #202020;
+  --text-secondary: #666666;
+  --text-meta: #B8B8B8;
+
+  /* Brand & Action Colors */
+  --action-red: #E44332;
+  --link-red: #DD4B39;
+  --border-subtle: #F0F0F0;
+
+  --sidebar-width: 300px;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "sidebar main";
+    grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    height: 100vh;
+    background-color: var(--bg-sidebar);
+    padding: 10px;
+}
+
+.main {
+    grid-area: main;
+    height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.material-symbols-rounded {
+  /* Reset any odd line-heights that might be pushing the icon */
+  line-height: 1; 
+  align-items: center; 
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item:hover, .add-task-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+.main {
+    background-color: var(--bg-primary);
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.main-header, .task-list-container {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.nav-item.is-active {
+    color: var(--action-red);
+    background-color: var(--bg-action-highlight);
+    font-weight: 600;
+}
+
+.nav-item.is-active .material-symbols-rounded {
+    color: var(--action-red);
+    font-variation-settings: 'FILL' 1;
+}
+
+.add-task-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  
+  border: none;
+  background: transparent;
+  color: var(--action-red); /* #E44332 */
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.add-task-btn .material-symbols-rounded {
+  font-size: 24px;
+  background-color: var(--action-red);
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+}

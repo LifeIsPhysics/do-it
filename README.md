@@ -22,3 +22,8 @@ Build production environment
 ```bash
 npm run build
 ```
+
+Deploy the website
+```bash
+npm run deploy
+```

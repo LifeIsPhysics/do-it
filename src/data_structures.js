@@ -1,5 +1,7 @@
+// TODO: Add logging
+
 export class ToDo {
-    constructor(title, description, dueDate, priority){
+    constructor(title, description="", dueDate=null, priority=""){
         this._id = crypto.randomUUID();
         this._title = title;
         this._description = description;
@@ -17,13 +19,14 @@ export class ToDo {
 }
 
 export class Project {
-    constructor(){
+    constructor(name){
         this._id = crypto.randomUUID();
-        console.log(`Project with ID ${this.id} constructed.`);
+        this._name = name;
         this._toDos = [];
     }
 
     get id() { return this._id; }
+    get name() { return this._name; }
     get toDos() { return this._toDos; }
 
     addToDo(todo) { this.toDos.push(todo); }

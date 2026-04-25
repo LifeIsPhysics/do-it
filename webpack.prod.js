@@ -4,4 +4,7 @@
  export default merge(common, {
    mode: 'production',
    devtool: 'source-map',
+   output: {
+    publicPath: '/do-it/',
+  },
  });
