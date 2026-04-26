@@ -22,8 +22,7 @@ export const UIFactory = {
       <header class="main-header">
         <h1>${title}</h1>
       </header>
-      <div class="task-list-container">
-      </div>
+      <div class="todo-item-form"></div>
     `;
   },
 

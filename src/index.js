@@ -1,10 +1,10 @@
 import "./styles/reset.css";
 import "./styles/stylesheet.css";
 import { UIFactory } from "./ui_factory.js";
-import {ToDo, Project} from "./data_structures.js";
-import { format, addDays } from "date-fns";
+// import {ToDo, Project} from "./data_structures.js";
+// import { format, addDays } from "date-fns";
 
-const IndexController = (function(document, window) {
+const IndexController = (function(document) {
     const elements = {
         sidebar: document.querySelector(".sidebar"), 
         main: document.querySelector(".main"),
@@ -59,14 +59,6 @@ const IndexController = (function(document, window) {
             setupEventListeners();
         },
     };
-})(document, window);
+})(document);
 
 IndexController.init();
-
-
-const savedData = localStorage.getItem('userProjects');
-if (savedData) {
-    const projects = JSON.parse(savedData);
-    console.log(projects);
-}
-
